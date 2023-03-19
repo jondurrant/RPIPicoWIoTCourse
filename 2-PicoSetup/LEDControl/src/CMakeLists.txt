@@ -53,7 +53,7 @@ target_compile_definitions(${NAME} PRIVATE
     MQTT_PASSWD=\"$ENV{MQTT_PASSWD}\"
     MQTT_HOST=\"$ENV{MQTT_HOST}\"
     MQTT_PORT=$ENV{MQTT_PORT}
-    configNUM_CORES=2
+    configNUM_CORES=1
 )
 
 # create map/bin/hex file etc.
