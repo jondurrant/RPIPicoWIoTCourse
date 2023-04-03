@@ -16,3 +16,6 @@
 [submodule "lib/twinThingPicoW"]
 	path = lib/twinThingPicoW
 	url = https://github.com/jondurrant/twinThingPicoW
+[submodule "lib/wolfssl"]
+	path = lib/wolfssl
+	url = https://github.com/wolfSSL/wolfssl
