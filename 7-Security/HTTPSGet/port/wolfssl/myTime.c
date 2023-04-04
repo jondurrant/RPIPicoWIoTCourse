@@ -1,5 +1,4 @@
 #include "pico/stdlib.h"
-#include "hardware/adc.h"
 
 
 unsigned long my_time(unsigned long* timer){
@@ -33,34 +32,4 @@ unsigned int my_rng_seed_gen(void){
 
 }
 
-unsigned int OLD_rng_seed_gen(void){
-	adc_init();
-	adc_set_temp_sensor_enabled(true);
-	adc_select_input(4);
 
-	uint seed = 0;
-	uint a = 0;
-	uint b =0;
-
-	a = adc_read() & 0x07;
-	srand(a);
-	vTaskDelay(10);
-	a = adc_read() & 0x03;
-	vTaskDelay(10);
-	b = adc_read() & 0x03;
-
-	for (int i=0; i < b; i++){
-		for (int j = 0; j < a; j++){
-			rand();
-		}
-		vTaskDelay(10);
-		a = adc_read() ;
-		srand(a | rand());
-	}
-	seed = rand() ^ (rand() << 16);
-
-	srand(seed);
-
-	printf("RNG SEED is 0x%u\n", seed);
-	return seed;
-}
