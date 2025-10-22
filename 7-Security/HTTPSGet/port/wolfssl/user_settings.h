@@ -454,7 +454,9 @@ extern "C" {
 #define WOLFSSL_USER_CURRTIME
 #define WOLFSSL_GMTIME
 #define USER_TICKS
-extern unsigned long my_time(unsigned long* timer);
+//extern unsigned long my_time(unsigned long* timer);
+#include <time.h>
+extern unsigned long my_time(time_t * timer);
 #define XTIME my_time
 
 

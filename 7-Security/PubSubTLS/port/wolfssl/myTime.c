@@ -1,8 +1,20 @@
 #include "pico/stdlib.h"
 
+#include "wolfssl/wolfcrypt/camellia.h"
+#include <time.h>
 
-unsigned long my_time(unsigned long* timer){
+
+//unsigned long my_time(unsigned long* timer){
+unsigned long my_time(time_t* timer){
 	return to_us_since_boot(get_absolute_time());
+}
+
+word32 LowResTimer(void) {
+   /*
+   write your own clock tick function if don't want time(0)
+   needs second accuracy but doesn't have to correlated to EPOCH
+   */
+   return (word32) (to_ms_since_boot (get_absolute_time()) / 1000);
 }
 
 
