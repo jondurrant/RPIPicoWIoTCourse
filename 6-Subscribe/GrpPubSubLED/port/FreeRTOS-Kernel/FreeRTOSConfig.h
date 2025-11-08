@@ -95,20 +95,6 @@
 #define configTIMER_QUEUE_LENGTH                10
 #define configTIMER_TASK_STACK_DEPTH            1024
 
-/* Interrupt nesting behaviour configuration. */
-/*
-#define configKERNEL_INTERRUPT_PRIORITY         [dependent of processor]
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY    [dependent on processor and application]
-#define configMAX_API_CALL_INTERRUPT_PRIORITY   [dependent on processor and application]
-*/
-
-#if FREE_RTOS_KERNEL_SMP // set by the RP2040 SMP port of FreeRTOS
-/* SMP port only */
-#define configNUM_CORES                         2
-#define configTICK_CORE                         0
-#define configRUN_MULTIPLE_PRIORITIES           1
-#define configUSE_CORE_AFFINITY                 1
-#endif
 
 /* RP2040 specific */
 #define configSUPPORT_PICO_SYNC_INTEROP         1
